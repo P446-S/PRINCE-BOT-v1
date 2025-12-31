@@ -1,0 +1,6 @@
+export const BOT_CONFIG = {
+  BOT_NAME: "PRINCE BOT",
+  PAIR_NUMBER: "234XXXXXXXXXX",
+  OWNER_NUMBER: "234XXXXXXXXXX@s.whatsapp.net",
+  PREFIX: "."
+}
