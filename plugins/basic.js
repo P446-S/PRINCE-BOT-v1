@@ -9,7 +9,8 @@ export default {
     "rules",
     "support",
     "speed",
-    "uptime"
+    "uptime",
+    "fuck",
   ],
   run: async ({ sock, msg, text }) => {
     const from = msg.key.remoteJid
@@ -25,7 +26,8 @@ export default {
       rules: "🚫 No spam",
       support: "📞 Contact owner",
       speed: "⚡ Fast",
-      uptime: "🕒 Running with speed"
+      uptime: "🕒 Running with speed",
+      fuck: "you" ,
     }
 
     await sock.sendMessage(from, { text: replies[cmd] })
