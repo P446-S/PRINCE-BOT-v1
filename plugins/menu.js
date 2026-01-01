@@ -2,14 +2,20 @@ export default {
   command: ["menu"],
   run: async ({ sock, msg }) => {
     await sock.sendMessage(msg.key.remoteJid, {
-      text: `🤖 *PRINCE BOT MENU*
+      text: `
+🤖 *PRINCE BOT MENU*
+
 • .menu
-• .ping
 • .alive
+• .ping
 • .owner
-• .hi
-• .joke
-• .quote`
+• .public / .private
+• .kick / .add / .promote
+• .welcome on/off
+• .info
+• .uptime
+• .runtime
+`
     })
   }
-  }
+}
