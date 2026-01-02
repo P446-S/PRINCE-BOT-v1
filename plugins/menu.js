@@ -1,37 +1,97 @@
 export default {
-  command: ["menu", "help"],
+  command: ["menu", "help", "commands"],
+
   run: async ({ sock, msg }) => {
-    await sock.sendMessage(msg.key.remoteJid, {
-      text: `
-🤖 *PRINCE BOT MENU*
+    const from = msg.key.remoteJid
 
-📌 BASIC
-• .menu
-• .alive
-• .ping
-• .info
+    const text = `
+╭━━━〔 🤖 *PRINCE BOT* 〕━━━╮
 
-👑 OWNER
-• .owner
-• .public
-• .private
+╭─ OWNER
+│ • owner
+│ • restart
+│ • shutdown
+│ • cleanup
+╰────────────
 
-👥 GROUP
-• .kick
-• .add
-• .promote
-• .demote
-• .tagall
-• .open
-• .close
+╭─ SYSTEM
+│ • mode
+│ • public
+│ • private
+│ • system
+╰────────────
 
-🛠 UTILITY
-• .uptime
+╭─ ADMIN
+│ • kick
+│ • add
+│ • promote
+│ • demote
+│ • tagall
+│ • antilink
+╰────────────
 
-🎉 AUTO
-• hi → auto reply
+╭─ GROUP
+│ • group
+│ • open
+│ • close
+│ • setname
+│ • setdesc
+╰────────────
 
+╭─ WELCOME
+│ • welcome on
+│ • welcome off
+╰────────────
+
+╭─ BASIC
+│ • menu
+│ • alive
+│ • ping
+│ • owner
+╰────────────
+
+╭─ UTILITY
+│ • calc
+│ • sticker
+│ • toimg
+│ • shorten
+│ • qr
+╰────────────
+
+╭─ INFO
+│ • botinfo
+│ • runtime
+│ • ping
+│ • speed
+╰────────────
+
+╭─ GAMES
+│ • ttt
+│ • guess
+│ • dice
+│ • trivia
+╰────────────
+
+╭─ DOWNLOAD
+│ • play
+│ • song
+│ • video
+│ • yt
+╰────────────
+
+╭─ EVENTS
+│ • welcome-event
+│ • goodbye-event
+╰────────────
+
+╭─ MAINTENANCE
+│ • cleanup
+│ • clearsession
+╰────────────
+
+╰━━━〔 ✅ READY & ONLINE 〕━━━╯
 `
-    })
+
+    await sock.sendMessage(from, { text })
   }
-  }
+      }
