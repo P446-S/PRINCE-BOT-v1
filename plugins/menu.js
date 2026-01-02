@@ -1,21 +1,37 @@
 export default {
-  command: ["menu"],
+  command: ["menu", "help"],
   run: async ({ sock, msg }) => {
     await sock.sendMessage(msg.key.remoteJid, {
       text: `
 🤖 *PRINCE BOT MENU*
 
+📌 BASIC
 • .menu
 • .alive
 • .ping
-• .owner
-• .public / .private
-• .kick / .add / .promote
-• .welcome on/off
 • .info
+
+👑 OWNER
+• .owner
+• .public
+• .private
+
+👥 GROUP
+• .kick
+• .add
+• .promote
+• .demote
+• .tagall
+• .open
+• .close
+
+🛠 UTILITY
 • .uptime
-• .runtime
+
+🎉 AUTO
+• hi → auto reply
+
 `
     })
   }
-}
+  }
