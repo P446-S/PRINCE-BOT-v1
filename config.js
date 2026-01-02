@@ -1,6 +1,16 @@
 export const BOT_CONFIG = {
-  BOT_NAME: "PRINCE BOT",
+  PREFIX: ".",
+  BOT_NAME: "PRINCE X UNKNOWN BOT",
+
+  // 👑 OWNER NUMBER (no +, no spaces)
+  OWNER: ["234XXXXXXXXXX"],
+
+  // 📲 NUMBER TO RECEIVE PAIRING CODE
   PAIR_NUMBER: "234XXXXXXXXXX",
-  OWNER_NUMBER: "234XXXXXXXXXX@s.whatsapp.net",
-  PREFIX: "."
-}
+
+  // 🌍 MODE: "public" or "private"
+  MODE: "public",
+
+  // 👋 WELCOME SYSTEM
+  WELCOME: true
+  }
