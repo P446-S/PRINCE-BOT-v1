@@ -1,15 +1,26 @@
-export default {
-  command: ["yt", "tiktok"],
-  run: async ({ sock, msg, body, cmd }) => {
-    const link = body.split(" ")[1]
-    if (!link) {
-      return sock.sendMessage(msg.key.remoteJid, {
-        text: `❌ Usage: .${cmd} <link>`
-      })
-    }
+import { BOT_CONFIG } from "../config.js"
 
-    await sock.sendMessage(msg.key.remoteJid, {
-      text: `⬇️ Download request received for:\n${link}\n\n(Downloader placeholder)`
-    })
+export default {
+  command: ["download", "dl", "dlmenu"],
+  run: async ({ sock, msg }) => {
+    const text = `
+╭───❒ 📥 DOWNLOAD MENU
+│
+│ 🎵 *AUDIO*
+│ • ${BOT_CONFIG.PREFIX}play <youtube link>
+│ • ${BOT_CONFIG.PREFIX}song <youtube link>
+│
+│ 🎬 *VIDEO*
+│ • ${BOT_CONFIG.PREFIX}video <youtube link>
+│ • ${BOT_CONFIG.PREFIX}yt <youtube link>
+│
+│ 📌 *HOW TO USE*
+│ Example:
+│ ${BOT_CONFIG.PREFIX}play https://youtu.be/xxxx
+│
+╰───────────────
+✅ READY & WORKING
+`
+    await sock.sendMessage(msg.key.remoteJid, { text })
   }
-}
+            }
