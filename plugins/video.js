@@ -1,21 +1,24 @@
-import fetch from "node-fetch"
+import ytdl from "ytdl-core"
 
 export default {
   command: ["video", "yt"],
   run: async ({ sock, msg, body }) => {
     const from = msg.key.remoteJid
-    const q = body.slice(6)
-    if (!q) return sock.sendMessage(from, { text: "❌ Use: .video <yt link>" })
+    const query = body.slice(6).trim()
+
+    if (!query) return sock.sendMessage(from, { text: "❌ Use: .video <youtube link>" })
 
     await sock.sendMessage(from, { text: "⏳ Preparing video..." })
 
     try {
-      const api = `https://api.vevioz.com/api/button/videos/${encodeURIComponent(q)}`
+      const stream = ytdl(query, { quality: "18" }) // Quality 18 is good for low file size
       await sock.sendMessage(from, {
-        text: `🎬 *CLICK TO DOWNLOAD*\n\n${api}`
+        video: { stream },
+        caption: `🎬 *Now playing video:* ${query}`
       })
-    } catch {
-      await sock.sendMessage(from, { text: "❌ Video failed" })
+    } catch (error) {
+      console.log(error)
+      await sock.sendMessage(from, { text: "❌ Error fetching video." })
     }
   }
-}
+            }
