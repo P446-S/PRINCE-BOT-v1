@@ -13,5 +13,7 @@
     "ytdl-core": "^4.11.5",
     "qrcode": "^1.5.4",
     "node-fetch": "^3.3.2"
+    "axios": "^1.6.0",
+"yt-search": "^2.10.4"
   }
 }
