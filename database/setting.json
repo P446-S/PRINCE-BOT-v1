@@ -1,0 +1,17 @@
+{
+  "prefix": ".",
+  "ownerName": "Prince",
+  "ownerNumber": "234XXXXXXXXXX",
+  "alwaysonline": false,
+  "anticall": false,
+  "antidelete": false,
+  "antiedit": false,
+  "autoread": false,
+  "autotype": false,
+  "autorecord": false,
+  "autoreact": false,
+  "chatbot": false,
+  "autoblock": false,
+  "badWords": [],
+  "countryCodes": []
+}
