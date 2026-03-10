@@ -2,15 +2,11 @@ export const BOT_CONFIG = {
   PREFIX: ".",
   BOT_NAME: "PRINCE X UNKNOWN BOT",
 
-  // 👑 OWNER NUMBER (no +, no spaces)
-  OWNER: ["234XXXXXXXXXX"],
+  OWNER: ["2349033168045"],
 
-  // 📲 NUMBER TO RECEIVE PAIRING CODE
-  PAIR_NUMBER: "234XXXXXXXXXX",
+  PAIR_NUMBER: "2349033168045",
 
-  // 🌍 MODE: "public" or "private"
   MODE: "public",
 
-  // 👋 WELCOME SYSTEM
   WELCOME: true
-  }
+}
